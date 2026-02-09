@@ -1,0 +1,10 @@
+python>=3.8
+torch>=1.13
+torchvision>=0.14
+numpy
+opencv-python
+scikit-image
+lpips
+open3d
+pyyaml
+tqdm

@@ -1,18 +1,58 @@
-This repository contains the official implementation of the paper
-“Multi-scale Generative Modelling for Enhanced Sparse-View 3D Scene Reconstruction”,
+
+# MMM-SparseView-3D
+
+This repository contains the official implementation of the paper:
+
+“Multi-scale Generative Modelling for Enhanced Sparse-View 3D Scene Reconstruction”  
 submitted to The Visual Computer.
+
 If you use this code, please cite the corresponding manuscript.
 
-## Environment
-- Python: 3.10
-- CUDA: 12.1
-- GPU: RTX 4090
+DOI: https://doi.org/10.5281/zenodo.XXXXXXX
+
+---
+
+## Requirements
+
+Python 3.8  
+CUDA 11.7  
+GPU: NVIDIA RTX 4090  
+
+Install dependencies:
+pip install -r requirements.txt
+
+---
 
 ## Dataset
-DTU Dataset  
-Split: 70 train / 15 val / 15 test  
-Sparse views: 3, 5, 9
+
+This project uses the DTU Multi-View Stereo dataset.
+
+
+  ```
+  - dtu/
+  - scan1 
+    - images
+      - 00000000.jpg
+      - 00000001.jpg
+      - ...
+    - cams_1
+      - 00000000_cam.txt
+      - 00000001_cam.txt
+      - ...
+    - pair.txt
+  ```
+
+Official download:
+drivelink
+
+---
 
 ## Training
-```bash
-python train.py
+
+python train.py --config configs/dtu_3view.yaml
+
+---
+
+## Evaluation
+
+python eval.py --config configs/dtu_3view.yaml
